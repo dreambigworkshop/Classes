@@ -1,0 +1,18 @@
+.wrapper{
+    width: 400px;
+    height: 600px;
+    position: relative;
+    margin: auto;
+    margin-top: 40px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px grey;
+}
+.block{
+    height: 25px;
+    width: 100px;
+    background-color: red;
+    position: absolute;
+    bottom: 10px;
+    left: 45%;
+}
