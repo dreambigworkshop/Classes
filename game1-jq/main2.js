@@ -1,14 +1,16 @@
+
 generateObject()
-let objectMovementInterval = setInterval(moveObjectDown, 500);
+let holeMovementInterval = setInterval(moveObjectDown, 200);
 
 function generateObject(){
-  let obj = '<div class="obj"></div>'
+  let obj = '<div class="obj">X</div>'
   $('.wrapper').append(obj)
   let wrapperPosition = $('.wrapper').position()
   let wrapperWidth = $('.wrapper').width()
-  let positionX = randomIntFromInterval(wrapperPosition.left, wrapperWidth)
-  $('.obj').css('left', positionX)
-  $('.obj').css('top', 0)
+  let positionX = randomIntFromInterval(wrapperPosition.left, wrapperWidth);
+  $(document).find(".obj").css("left", positionX);
+  $(document).find(".obj").css("top", 0);
+  moveObjectDown()
 }
 
 function randomIntFromInterval(min, max) {
@@ -17,17 +19,12 @@ function randomIntFromInterval(min, max) {
 
 $(document).keyup(function (e) {
   let keyCode = e.which;
-  console.log(keyCode)
   if (keyCode === 39) {
     moveRight();
   }
 
   if (keyCode === 37) {
     moveLeft();
-  }
-
-  if (keyCode === 32) {
-    clearInterval(objectMovementInterval)
   }
 });
 
@@ -48,10 +45,12 @@ function moveLeft() {
 function moveObjectDown(){
   let obj = $('.obj')
   let position = obj.position()
-  if (position.top <= 520){
-    obj.css('top', position.top + 20)
-  }else{
-    $(document).find('.obj').remove()
+  console.log(position)
+  if (position.top > 520){
+    $(document).find(".obj").remove();
     generateObject()
+  }else{
+    obj.css("top", position.top + 20);
   }
 }
+
