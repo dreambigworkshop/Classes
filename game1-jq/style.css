@@ -7,6 +7,8 @@
     border: 1px solid #bbb;
     border-radius: 10px;
     box-shadow: 2px 2px 2px grey;
+    background-image: url('movingroad.gif');
+    background-size: cover;
 }
 .block{
     height: 25px;
@@ -23,10 +25,14 @@
     background-color: aqua;
     border-radius: 50%;
 }
-.score {
+.score, .missed {
     font-size: 60px;
     position: absolute;
     right: 10px;
     font-weight: bold;
     color: green;
+}
+.missed{
+    left: 10px;
+    color: red;
 }
