@@ -1,8 +1,10 @@
 // Variable Diclaratin
 let play = true;
-let objMoveSpeed = 200;
-let objMoveDistance = 20;
-let blockMoveDistance = 20;
+let objMoveSpeed = 200
+let objMoveDistance = 20
+let blockMoveDistance = 20
+let score = 0
+let missed = 0
 
 // Generate and drop object
 let objectMovementInterval = setInterval(moveObjectDown, objMoveSpeed);
@@ -69,32 +71,39 @@ function moveObjectDown() {
   let position = obj.position();
   let objHeight = $(document).find(".obj").height();
   let blockPosition = $(document).find(".block").position();
-
   if (position.top + objHeight + objMoveDistance <= blockPosition.top) {
     obj.css("top", position.top + objMoveDistance);
   } else {
-    checkScore();
+    checkScore()
     // Clear current falling object and create new one
     $(document).find(".obj").remove();
     generateObject();
   }
 }
 
-function checkScore() {
-  let objPosition = $(document).find(".obj").position();
-  let objWidth = $(document).find(".obj").width();
-  let objPositionLeft = objPosition.left;
-  let objPositionRight = objPosition.left + objWidth;
+function checkScore(){
+  let objPostion = $(document).find('.obj').position()
+  let objWidth = $(document).find('.obj').width()
+  let objPositionLeft = objPostion.left
+  let objPositionRight = objPositionLeft + objWidth
 
-  let blockPosition = $(document).find(".block").position();
-  let blockWidth = $(document).find(".block").width();
-  let blockPositionLeft = blockPosition.left;
-  let blockPositionRight = blockPosition.left + blockWidth;
-
-  if (
-    objPositionRight > blockPositionLeft &&
-    objPositionLeft < blockPositionRight
-  ) {
-    console.log("Score");
+  let blockPosition = $(document).find('.block').position()
+  let blockWidth = $(document).find('.block').width()
+  let blockPositionLeft = blockPosition.left
+  let blockPositionRight = blockPositionLeft + blockWidth
+  if(objPositionRight > blockPositionLeft && objPositionLeft < blockPositionRight){
+    score++
+    $('.score').html(score)
+    if(score%5==0){
+      objMoveSpeed -= 50
+    }
+  }else{
+    missed ++
+    if(missed > 3){
+      score = 0
+      missed = 0
+      $('.score').html('Game Over') 
+    }
   }
+
 }

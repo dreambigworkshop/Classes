@@ -14,8 +14,12 @@ function generateObject() {
   $(".wrapper").append(obj);
   let wrapperPosition = $(".wrapper").position();
   let wrapperWidth = $(".wrapper").width();
+  let objWidth = $(document).find(".obj").width();
   // Generate Random Co-ordinates for falling object
-  let positionX = randomIntFromInterval(wrapperPosition.left, wrapperWidth);
+  let positionX = randomIntFromInterval(
+    wrapperPosition.left,
+    wrapperWidth - objWidth
+  );
   $(".obj").css("left", positionX);
   $(".obj").css("top", 0);
   objectMovementInterval = setInterval(moveObjectDown, objMoveSpeed);
@@ -63,7 +67,9 @@ function moveLeft() {
 function moveObjectDown() {
   let obj = $(".obj");
   let position = obj.position();
-  if (position.top <= 520) {
+  let objHeight = $(document).find(".obj").height();
+  let blockPosition = $(document).find(".block").position();
+  if (position.top + objHeight + objMoveDistance <= blockPosition.top) {
     obj.css("top", position.top + objMoveDistance);
   } else {
     // Clear current falling object and create new one

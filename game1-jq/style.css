@@ -23,3 +23,10 @@
     background-color: aqua;
     border-radius: 50%;
 }
+.score {
+    font-size: 60px;
+    position: absolute;
+    right: 10px;
+    font-weight: bold;
+    color: green;
+}
