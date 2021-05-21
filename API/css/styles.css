@@ -1,0 +1,33 @@
+.search-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+#searchInput{
+    height: 30px;
+    width: 300px;
+}
+.search-btn{
+    background-color: blueviolet;
+    border: none;
+    font-weight: bold;
+    padding: 5px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.search-btn:hover{
+    background-color: cornflowerblue;
+}
+.result-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movie-card{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.movie-card img{
+    height: 295px;
+    width: 210px;
+}
