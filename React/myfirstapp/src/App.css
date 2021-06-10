@@ -1,0 +1,21 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.header{
+  height: 150px;
+  background-color: #bbb;
+}
+.content{
+  height: 100%;
+}
+.footer{
+  height: 200px;
+  background-color: blueviolet;
+}
