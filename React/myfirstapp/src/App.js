@@ -8,13 +8,13 @@ function App() {
   return (
     <div className="App">
         <div className="header">
-          <HeadeComponent />
+          {/* <HeadeComponent /> */}
         </div>
         <div className="content">
-          <ContentComponent />
+          <ContentComponent initialValue={5}/>
         </div>
         <div className="footer">
-          <FooterComponent />
+          {/* <FooterComponent /> */}
         </div>
     </div>
   );
