@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 const initialValues = {
-    name: '',
-    email: '',
-    password: '',
-}
+  name: "",
+  email: "",
+  password: "",
+};
 const taskInitial = {
-    tast: '',
-    data: '',
-    isFinished: ''
-}
+  tast: "",
+  data: "",
+  isFinished: "",
+};
 export default function FormComponent() {
   const [values, setValues] = useState(initialValues);
   const [formData, setFormData] = useState([]);
@@ -22,13 +22,13 @@ export default function FormComponent() {
     }));
   };
   const submitData = (e) => {
-      e.preventDefault()
-      setValues(initialValues)
-      let oldFormData = formData
-      oldFormData.push(values)
-      setFormData([...oldFormData])
-      console.log(formData)
-  }
+    e.preventDefault();
+    setValues(initialValues);
+    let oldFormData = formData;
+    oldFormData.push(values);
+    setFormData([...oldFormData]);
+    console.log(formData);
+  };
   return (
     <div>
       <form className="form" onSubmit={submitData}>
@@ -55,13 +55,16 @@ export default function FormComponent() {
         />
         <button type="submit">Submit</button>
       </form>
-        <div className="results">
-            <ul>
-                {formData && formData.map((fd, key) => (
-                    <li key={key}>{fd.name} : {fd.email} : {fd.password}</li>
-                ))}
-            </ul>
-        </div>
+      <div className="results">
+        <ul>
+          {formData &&
+            formData.map((fd, key) => (
+              <li key={key}>
+                {fd.name} : {fd.email} : {fd.password}
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }
