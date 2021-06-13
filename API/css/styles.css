@@ -18,7 +18,7 @@
 .search-btn:hover{
     background-color: cornflowerblue;
 }
-.result-wrapper{
+/* .result-wrapper{
     display: flex;
     flex-wrap: wrap;
 }
@@ -30,4 +30,4 @@
 .movie-card img{
     height: 295px;
     width: 210px;
-}
+} */
