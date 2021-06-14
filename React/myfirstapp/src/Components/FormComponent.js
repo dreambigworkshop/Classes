@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 const initialValues = {
   name: "",
   email: "",
@@ -12,6 +16,19 @@ const taskInitial = {
 export default function FormComponent() {
   const [values, setValues] = useState(initialValues);
   const [formData, setFormData] = useState([]);
+  const [serverData, setServerData] = useState([])
+
+  useEffect(()=> {
+    getDataFromJsonServer()
+  }, [])
+
+  const getDataFromJsonServer = async() => {
+    console.log('Above Await')
+    let res = await axios.get('http://localhost:5000/customers')
+    saveDataToServer(res.data)
+    console.log('Below Await', res.data)
+    setServerData([...res.data])
+  }
   const handleChange = (e) => {
     // console.log(e)
     // console.log(e.target.name)
@@ -25,10 +42,29 @@ export default function FormComponent() {
     e.preventDefault();
     setValues(initialValues);
     let oldFormData = formData;
+    // cookies,,
+
+    // cookies.set('name', values.name)
+    // cookies.set('password', values.password)
+    // console.log('Name', cookies.get('name'))
+    // console.log('Password', cookies.get('password'))
+
+    // localStoratge
+    // localStorage.setItem('formData', JSON.stringify(formData))
+    // console.log(JSON.parse(localStorage.getItem('formData')))
+
+    // JSON server
+    
+    saveDataToServer(values)
     oldFormData.push(values);
     setFormData([...oldFormData]);
-    console.log(formData);
+    // console.log(formData);
   };
+  const saveDataToServer = async (data) => {
+      let res = await axios.post('http://localhost:5000/customers/', data)
+      // getDataFromJsonServer()
+      console.log(res)
+  }
   return (
     <div>
       <form className="form" onSubmit={submitData}>
@@ -57,10 +93,10 @@ export default function FormComponent() {
       </form>
       <div className="results">
         <ul>
-          {formData &&
-            formData.map((fd, key) => (
+          {serverData &&
+            serverData.map((fd, key) => (
               <li key={key}>
-                {fd.name} : {fd.email} : {fd.password}
+                {fd.show.name} : {fd.show.language} : <img src={`${fd.show.image.medium}`} height={250} />
               </li>
             ))}
         </ul>
