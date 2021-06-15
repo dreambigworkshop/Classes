@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+.todo-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+}
+
+.form-wrapper input, select{
+padding: 10px 15px;
+border-radius: 10px;
+margin-right: 10px;
+outline: none;
+}
+.form-wrapper button{
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #242d97;
+  border-color: #242d97;
+  font-weight: bold;
+  color: #fff;
+}
+.todo-list ol{
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #eee;
+}
+.todo-list ol li{
+  text-align: left;
+  cursor: pointer;
+  margin: 10px;
+  color: red;
+  display: flex;
+  justify-content: space-between;
+}
+li.complete{
+  color: green!important;
+  font-weight: bold;
+}
+li button{
+  padding: 5px 15px;
+  height: 30px;
+  margin-top: 12px;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+  border-color: red;
+  margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: 1px ​1px 4px 2px #bbb;
+}
