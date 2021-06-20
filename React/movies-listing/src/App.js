@@ -16,7 +16,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/search-movies/152207">Movies</Link>
+              <Link to="/search-movies">Movies</Link>
             </li>
             <li>
               <Link to="/counter">Counter</Link>
@@ -24,7 +24,7 @@ function App() {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/search-movies/:id">
+          <Route exact path="/search-movies">
             <MovieSearchComponent />
           </Route>
           <Route exact path="/counter">
