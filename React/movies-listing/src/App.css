@@ -1,13 +1,12 @@
 .App {
   text-align: center;
 }
-.movie-search-wrapper{
+.movie-search-wrapper {
   padding: 40px;
 }
-.search-field{
-  
+.search-field {
 }
-.search-field input{
+.search-field input {
   padding: 20px 15px;
   outline: none;
   border-color: #ddd;
@@ -16,7 +15,7 @@
   font-size: 22px;
   color: grey;
 }
-.search-field button{
+.search-field button {
   padding: 20px 15px;
   outline: none;
   border-color: blueviolet;
@@ -27,28 +26,28 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.result-wrapper{
+.result-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
-.movie{
+.movie {
   margin: 10px;
 }
-.movie .image{
+.movie .image {
   padding: 5px;
   border: 2px solid #eee;
   border-radius: 5px;
 }
-.image img{
+.image img {
   height: 250px;
   width: 150px;
 }
-.name{
+.name {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
 }
-.loading{
+.loading {
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -62,4 +61,30 @@
   font-size: 45px;
   font-weight: bold;
   color: #fff;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+ul li {
+  list-style: none;
+  padding: 5px 15px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+ul li a {
+  text-decoration: none;
+  padding: 5px 15px;
+}
+ul li:hover, ul li.active {
+  background-color: blueviolet;
+  color: #ccc;
+}
+
+.search-div {
+  display: none;
+}
+.search-div.active {
+  display: block;
 }
