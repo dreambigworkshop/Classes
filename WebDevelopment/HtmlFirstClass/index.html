@@ -1,8 +1,12 @@
 <html>
   <head>
-      <title>This is out first class in html</title>
+    <title>This is out first class in html</title>
   </head>
   <body>
+    <section>
+      <h1>Text Tag Section</h1>
+      <hr/>
+
       <h1>h1: Hello World</h1>
       <h2>h2: Hello World</h2>
       <h3>h3: Hello World</h3>
@@ -10,21 +14,126 @@
       <h5>h5: Hello World</h5>
       <h6>h6: Hello World</h6>
       ************p*************
-      <p>p: Hello <br/> World</p>
+      <p>
+        p: Hello <br />
+        World
+      </p>
       <p>p: Hello World From Nepal</p>
       <i>i: I am italic</i>
-      <br/>
+      <br />
       <strong>strong: I am strong</strong>
-      <br/>
+      <br />
       <u> u: I am with underline</u>
-      <br/>
+      <br />
       <small>small: I am Small Text</small>
-      <br/>
+      <br />
 
       <mark>mark: I am marked</mark>
-      <br/>
+      <br />
       <del>del: I am crossed</del>
       <p>Next word is sub <sub>sub: i am sub </sub></p>
       <p>Next word is sub <sup>sup: superscripted</sup></p>
+      <hr/>
+    </section>
+    <section>
+      <h1>List, Table, Form Section</h1>
+      <hr />
+      <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+      </ul>
+      <ol>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+      </ol>
+
+      <table border="1" width="100%">
+        <!-- <caption>User Info</caption> -->
+        <tr>
+          <th>SN</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Himal</td>
+          <td>himal@gmail.com</td>
+          <td>9876543210</td>
+          <td>Jante-8 morang</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Pradip</td>
+          <td>pradip@gmail.com</td>
+          <td>9876543210</td>
+          <td>Lettang-8 morang</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Hero</td>
+          <td>hero@gmail.com</td>
+          <td>9876543210</td>
+          <td>Lettang-8 morang</td>
+        </tr>
+      </table>
+      <hr />
+      <form method="POST" action="http://localhost:5000/save-data">
+        <h1>Please Enter your detail</h1>
+        <div>
+          <label>Username</label>
+          <br />
+          <input type="text" placeholder="Username" value="" name="username" style="width: 200px" />
+        </div>
+        <div>
+          <label>Age</label>
+          <br />
+          <input
+            type="number"
+            placeholder="Age"
+            max="150"
+            min="0"
+            value="50"
+            style="width: 200px"
+          />
+        </div>
+        <div>
+          <label>Email</label>
+          <br />
+          <input type="email" placeholder="Email" style="width: 200px" />
+        </div>
+        <div>
+          <label>Password</label><br />
+          <input type="password" placeholder="Password" style="width: 200px" />
+        </div>
+        <div>
+          <label>Checkbox</label><br />
+          <input type="checkbox" /> Do you Aggree
+          <input type="checkbox" /> Remember Me
+        </div>
+        <div>
+          <label>Gender</label><br />
+          <select style="width: 200px;">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Don't want to tell</option>
+          </select>
+        </div>
+        <div>
+          <label> Radio </label><br/>
+          <input type="radio" checked name="radio" /> Had breakfast? Yes
+          <input type="radio" name="radio" />Had breakfast? No
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </section>
+    <hr/>
+    <section>
+<h1>Multimedia: Image, Audio, Video</h1>
+    </section>
   </body>
 </html>
