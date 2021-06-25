@@ -3,6 +3,7 @@ import "./App.css";
 import MovieSearchComponent from "./Components/MovieSearchComponent";
 import HomeComponent from "./Components/HomeComponent";
 import CounterComponent from "./Components/CounterComponent";
+import MovieComponent from "./Components/MovieComponent";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route exact path="/counter">
             <CounterComponent />
+          </Route>
+          <Route exact path="/movie/:id">
+            <MovieComponent />
           </Route>
           <Route path="/">
             <HomeComponent />

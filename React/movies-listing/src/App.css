@@ -32,6 +32,7 @@
 }
 .movie {
   margin: 10px;
+  cursor: pointer;
 }
 .movie .image {
   padding: 5px;
@@ -41,6 +42,9 @@
 .image img {
   height: 250px;
   width: 150px;
+}
+.large-image img {
+  width: 50%;
 }
 .name {
   text-align: center;
@@ -87,4 +91,10 @@ ul li:hover, ul li.active {
 }
 .search-div.active {
   display: block;
+}
+.genres{
+  display: flex;
+}
+.genres span{
+  margin: 10px;
 }

@@ -1,14 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import LoadingComponent from "./LoadingComponent";
-import { useHistory } from "react-router";
+import { useHistory} from "react-router";
 
 export default function MovieSearchComponent() {
   const [movieName, setMovieName] = useState("");
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [tab, setTab] = useState("hindi");
-  const history = useHistory()
+  const history = useHistory();
 
   const SearchMovie = async () => {
     setLoading(true);
@@ -22,16 +21,17 @@ export default function MovieSearchComponent() {
     setMovieName(e.target.value);
   };
 
+  const RedirectToMovie = (movieId) => {
+    if(movieId){
+      history.push(`/movie/${movieId}`)
+    }else{
+      alert('No Detail Found')
+    }
+  };
+
   return (
     <div className="movie-search-wrapper">
-      <nav className="su-menu-wrapper">
-        <ul>
-          <li className={`${tab === 'hindi' ? 'active': ''}`} onClick={() => setTab("hindi")}>Hindi</li>
-          <li className={`${tab === 'english' ? 'active': ''}`} onClick={() => setTab("english")}>English</li>
-        </ul>
-      </nav>
-      <div className={`search-div ${tab === 'hindi' ? 'active': ''}`}>
-        <h1>Hindi Search</h1>
+      <div className={`search-div active`}>
         <div className="search-field">
           <input type="text" placeholder="Search..." onChange={HandleChange} />
           <button className="search-btn" onClick={SearchMovie}>
@@ -43,30 +43,11 @@ export default function MovieSearchComponent() {
             <LoadingComponent />
           ) : (
             movies.map((movie, key) => (
-              <div className="movie" key={key}>
-                <div className="image">
-                  <img src={movie.show.image?.medium} />
-                </div>
-                <div className="name">{movie.show.name}</div>
-              </div>
-            ))
-          )}
-        </div>
-      </div>
-      <div className={`search-div ${tab === 'english' ? 'active': ''}`}>
-        <h1>English Search</h1>
-        <div className="search-field">
-          <input type="text" placeholder="Search..." onChange={HandleChange} />
-          <button className="search-btn" onClick={SearchMovie}>
-            Search
-          </button>
-        </div>
-        <div className="result-wrapper">
-          {loading ? (
-            <LoadingComponent />
-          ) : (
-            movies.map((movie, key) => (
-              <div className="movie" key={key}>
+              <div
+                className="movie"
+                key={key}
+                onClick={() => RedirectToMovie(movie.show.externals.thetvdb)}
+              >
                 <div className="image">
                   <img src={movie.show.image?.medium} />
                 </div>
