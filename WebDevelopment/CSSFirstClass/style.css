@@ -1,0 +1,41 @@
+body {
+  background-color: aquamarine;
+}
+.large-p {
+  color: red;
+  font-size: 80px;
+  background-color: green;
+  width: fit-content;
+  padding: 25px;
+  border-radius: 15px;
+  border: 5px solid red;
+  box-shadow: 2px 2px 12px #000;
+}
+.i-am-groot {
+  color: #fff;
+  font-size: 50px;
+  background-color: indianred;
+  padding: 100px;
+  width: fit-content;
+  border-radius: 15px;
+}
+img {
+  height: 200px;
+  width: 200px;
+  border: 5px double #000;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+.small-p {
+  color: red;
+  font-size: 40px;
+  background-color: rgb(128, 129, 238);
+  width: fit-content;
+  padding: 25px;
+  border-radius: 15px;
+  border: 5px solid red;
+  box-shadow: 2px 2px 12px #000;
+}
+#pId {
+  font-size: 35px;
+}
