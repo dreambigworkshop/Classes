@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import BrandContext from "./BrandContext";
 
-export default function BikeBrands(props) {
-    const {brands} = props
+export default function BikeBrands() {
+  const {brands, models} = useContext(BrandContext);
+
   return (
     <div>
       <ul>
-        {brands.map((b) => (
-          <li>{b}</li>
+        {brands.map((b, key) => (
+          <li key={key}>{b}</li>
+        ))}
+      </ul>
+      <ul>
+        {models.map((b, key) => (
+          <li key={key}>{b}</li>
         ))}
       </ul>
     </div>

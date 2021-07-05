@@ -1,29 +1,24 @@
 import React from "react";
-import NavComponent from './NavComponent'
+import NavComponent from "./NavComponent";
 import BikeBrands from "./BikeBrands";
-import './App.css'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import BrandProvider from "./BrandProvider";
 
 export default function App() {
-  const brands = ["Bazaz", "Yamaha", "Royal Enfield", "Honda", "BMW"];
-
   return (
     <Router>
-      <div>
-       <NavComponent brands={brands}/>
+      <BrandProvider>
+        <NavComponent />
         <Switch>
           <Route path="/brand">
-            <BikeBrands brands={brands}/>
+            <BikeBrands />
           </Route>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
-      </div>
+      </BrandProvider>
     </Router>
   );
 }
