@@ -1,0 +1,47 @@
+.main{
+  margin: 50px 7%;
+  box-shadow: 0 0 8px 0 #0007;
+  background: transparent;
+  border-radius: 10px;
+}
+.profileInfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profileImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileImage img{
+  height: 200px;
+}
+.profileComponent{
+  padding: 40px;
+  background: #ff9fb1;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.educationComponent{
+  padding: 20px;
+  background-color: #dffff4;
+}
+.eduList, .skills{
+  padding: 20px;
+}
+.skillComponent{
+  background: bisque;
+  padding: 20px;
+}
+/* .skills{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+} */
+.skill .slider{
+  width: 400px;
+}
