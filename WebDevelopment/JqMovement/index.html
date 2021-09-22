@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQ movement</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .wrapper {
+        height: 80vh;
+        width: 400px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin: auto;
+        margin-top: 5%;
+        position: relative;
+      }
+      .obj {
+        height: 25px;
+        width: 25px;
+        background-color: red;
+        position: absolute;
+        left: 50%;
+        top: 5px;
+        /* border-radius: 50%; */
+        box-shadow: 2px 2px 2px #0007;
+        -webkit-animation: spin 4s linear infinite;
+        -moz-animation: spin 4s linear infinite;
+        animation: spin 4s linear infinite;
+      }
+      .controll {
+        position: absolute;
+        bottom: 5px;
+        left: 40%;
+      }
+      #leftId {
+        background-color: red;
+      }
+      @-moz-keyframes spin {
+        100% {
+          -moz-transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="obj"></div>
+      <div class="controll">
+        <button class="left" id="leftId">Left</button>
+        <button class="right" id="rightId">Right</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      console.log("JQuery Loaded");
+    });
+
+    $(".left").click(function () {
+      let currentPositon = $(".obj").position();
+      if (currentPositon.left > 0) {
+        $(".obj").css("left", currentPositon.left - 25);
+      }
+    });
+
+    $(".right").click(function () {
+      let currentPositon = $(".obj").position();
+      if (currentPositon.left < 375) {
+        $(".obj").css("left", currentPositon.left + 25);
+      }
+    });
+
+    // Jquery CDN
+    // Select -> class, id
+    // Click Event
+    // Get position of object in JQ
+    // Change css property with JQ
+  </script>
+</html>
