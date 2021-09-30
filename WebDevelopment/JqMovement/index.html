@@ -66,10 +66,12 @@
   <body>
     <div class="wrapper">
       <div class="obj"></div>
-      <div class="controll">
-        <button class="left" id="leftId">Left</button>
-        <button class="right" id="rightId">Right</button>
-      </div>
+    </div>
+    <div class="controll">
+      <button class="left" id="leftId">Left</button>
+      <button class="right" id="rightId">Right</button>
+      <button class="up" id="upId">Up</button>
+      <button class="down" id="downId">Down</button>
     </div>
   </body>
   <script>
@@ -78,23 +80,74 @@
     });
 
     $(".left").click(function () {
+      MoveLeft();
+    });
+
+    $(".right").click(function () {
+      MoveRight();
+    });
+
+    $(".up").click(function () {
+      MoveUp();
+    });
+
+    $(".down").click(function () {
+      MoveDown();
+    });
+
+    $("body").keydown(function (e) {
+      let keyCode = e.which;
+      if (keyCode == 37) {
+        MoveLeft();
+      }
+      if (keyCode == 39) {
+        MoveRight();
+      }
+      if (keyCode == 38) {
+        MoveUp();
+      }
+      if (keyCode == 40) {
+        MoveDown();
+      }
+    });
+
+    function MoveLeft() {
       let currentPositon = $(".obj").position();
       if (currentPositon.left > 0) {
         $(".obj").css("left", currentPositon.left - 25);
       }
-    });
+    }
 
-    $(".right").click(function () {
+    function MoveRight() {
       let currentPositon = $(".obj").position();
       if (currentPositon.left < 375) {
         $(".obj").css("left", currentPositon.left + 25);
       }
-    });
+    }
+
+    function MoveUp() {
+      let currentPositon = $(".obj").position();
+      if (currentPositon.top > 5) {
+        $(".obj").css("top", currentPositon.top - 25);
+      }
+    }
+
+    function MoveDown() {
+      let currentPositon = $(".obj").position();
+      if (currentPositon.top < 680) {
+        $(".obj").css("top", currentPositon.top + 25);
+      }
+    }
 
     // Jquery CDN
     // Select -> class, id
     // Click Event
     // Get position of object in JQ
     // Change css property with JQ
+
+    // Keyup, Keydown event
+    // Find which key is pressed
+    // Functions
+
   </script>
 </html>
