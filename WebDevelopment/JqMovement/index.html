@@ -37,6 +37,14 @@
         -moz-animation: spin 4s linear infinite;
         animation: spin 4s linear infinite;
       }
+      .block {
+        height: 25px;
+        width: 50px;
+        background-color: red;
+        position: absolute;
+        left: 50%;
+        bottom: 2px;
+      }
       .controll {
         position: absolute;
         bottom: 5px;
@@ -66,6 +74,7 @@
   <body>
     <div class="wrapper">
       <div class="obj"></div>
+      <div class="block"></div>
     </div>
     <div class="controll">
       <button class="left" id="leftId">Left</button>
@@ -75,9 +84,35 @@
     </div>
   </body>
   <script>
-    $(document).ready(function () {
-      console.log("JQuery Loaded");
-    });
+    let distance = 25;
+    let duration = 100;
+    let intervel = StarGame();
+
+    function ResetObject() {
+      let wrapperWidth = $(".wrapper").width(); // 400
+      let leftRandomPosition = randomIntFromInterval(0, 375);
+      $(".obj").css("top", 0);
+      $(".obj").css("left", leftRandomPosition);
+    }
+
+    function PausePlay() {
+      if (intervel) {
+        clearInterval(intervel);
+        intervel = false;
+      } else {
+        intervel = StarGame();
+      }
+    }
+    function StarGame() {
+      return setInterval(function () {
+        let currentPositon = $(".obj").position();
+        if (currentPositon.top < 680) {
+          MoveDown();
+        } else {
+          ResetObject();
+        }
+      }, duration);
+    }
 
     $(".left").click(function () {
       MoveLeft();
@@ -97,46 +132,68 @@
 
     $("body").keydown(function (e) {
       let keyCode = e.which;
-      if (keyCode == 37) {
-        MoveLeft();
+      console.log(keyCode);
+      if (keyCode == 37 || keyCode == 65) {
+        MoveBlockLeft();
       }
-      if (keyCode == 39) {
-        MoveRight();
+      if (keyCode == 39 || keyCode == 68) {
+        MoveBlockRight();
       }
-      if (keyCode == 38) {
+      if (keyCode == 38 || keyCode == 87) {
         MoveUp();
       }
-      if (keyCode == 40) {
+      if (keyCode == 40 || keyCode == 83) {
         MoveDown();
+      }
+      if (keyCode == 32) {
+        PausePlay();
       }
     });
 
     function MoveLeft() {
       let currentPositon = $(".obj").position();
       if (currentPositon.left > 0) {
-        $(".obj").css("left", currentPositon.left - 25);
+        $(".obj").css("left", currentPositon.left - distance);
       }
     }
 
     function MoveRight() {
       let currentPositon = $(".obj").position();
       if (currentPositon.left < 375) {
-        $(".obj").css("left", currentPositon.left + 25);
+        $(".obj").css("left", currentPositon.left + distance);
+      }
+    }
+
+    function MoveBlockLeft() {
+      let currentPositon = $(".block").position();
+      if (currentPositon.left > 0) {
+        $(".block").css("left", currentPositon.left - distance);
+      }
+    }
+
+    function MoveBlockRight() {
+      let currentPositon = $(".block").position();
+      if (currentPositon.left < 350) {
+        $(".block").css("left", currentPositon.left + distance);
       }
     }
 
     function MoveUp() {
       let currentPositon = $(".obj").position();
       if (currentPositon.top > 5) {
-        $(".obj").css("top", currentPositon.top - 25);
+        $(".obj").css("top", currentPositon.top - distance);
       }
     }
 
     function MoveDown() {
       let currentPositon = $(".obj").position();
       if (currentPositon.top < 680) {
-        $(".obj").css("top", currentPositon.top + 25);
+        $(".obj").css("top", currentPositon.top + distance);
       }
+    }
+
+    function randomIntFromInterval(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
     // Jquery CDN
@@ -149,5 +206,7 @@
     // Find which key is pressed
     // Functions
 
+    // Settime interval
+    // Random number between two number
   </script>
 </html>
