@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.header {
+  border-bottom: 1px solid #0002;
+}
+.news-wrapper {
+  width: 100%;
+  display: flex;
+}
+ul {
+  list-style: none;
+}
+.news {
+  width: 100%;
+  border: 5px solid sienna;
+}
+.notice {
+  width: 100%;
+  border: 5px solid sienna;
+}
