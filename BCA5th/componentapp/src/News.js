@@ -1,14 +1,21 @@
 import React from 'react'
+import NewsItem from './NewsItem'
 
-export default function News() {
+export default function News(props) {
+  let {title} = props 
     return (
         <div className="news">
+          <h1>
+            {title}
+          </h1>
         <ul>
-          <li>News 1</li>
-          <li>News 1</li>
-          <li>News 1</li>
-          <li>News 1</li>
+          <NewsItem news="This is a good news" order={1}/>
+          <NewsItem news="This is a great news" order={2}/>
+          <NewsItem news="This is a great good news" order={3}/>
+          <NewsItem news="This is a great great good news" order={4}/>
         </ul>
       </div>
     )
 }
+
+//  Props is a way to send data from one component to its child component
