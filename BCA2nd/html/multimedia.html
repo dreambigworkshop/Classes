@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimedia</title>
+  </head>
+  <body>
+    <section>
+      <h1>Image</h1>
+      <img src="img/peace.jpg" height="200" />
+      <img src="img/peace.jpg" height="400" />
+      <img src="img/gif.gif" height="200" />
+    </section>
+    <section>
+      <h1>Video</h1>
+      <video width="320" height="240" controls>
+        <source src="video/video.mp4" type="video/mp4" />
+      </video>
+    </section>
+    <section>
+      <h1>Audio</h1>
+      <audio controls src="audio/audio.mp3"></audio>
+
+    </section>
+    <section>
+      <h1>IFrame</h1>
+      <iframe src="https://samriddhicollege.edu.np/" title="description"></iframe>
+
+    </section>
+    <section>
+      <h1>Canvas</h1>
+      <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+    </canvas>
+    </section>
+  </body>
+  <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+    </script>
+</html>

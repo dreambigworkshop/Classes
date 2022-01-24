@@ -17,5 +17,3 @@ export default function News(props) {
       </div>
     )
 }
-
-//  Props is a way to send data from one component to its child component
