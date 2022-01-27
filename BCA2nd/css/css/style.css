@@ -1,0 +1,41 @@
+.container {
+  padding: 10%;
+  /* background-color: #ff000030; */
+  /* background: black; */
+  background-image: url("../peace.jpg");
+  border: 6px inset #9c27b0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  border-radius: 50px;
+}
+h1 {
+  color: green;
+  font-size: 80px;
+}
+h2{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 50px;
+    border-radius: 100px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+.sub-title {
+  color: blue;
+}
+
+.big-text {
+  font-size: 50px;
+}
+
+.black-text {
+  color: grey;
+}
+h2.big-text#subTitle {
+  letter-spacing: 15px;
+}
+#lastLine {
+  margin: 80px;
+}
