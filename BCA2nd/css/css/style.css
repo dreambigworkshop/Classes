@@ -12,15 +12,17 @@
 h1 {
   color: green;
   font-size: 80px;
+  font-family: monospace;
+
 }
-h2{
-    border: 1px solid black;
-    width: fit-content;
-    padding: 50px;
-    border-radius: 100px;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+h2 {
+  border: 1px solid black;
+  width: fit-content;
+  padding: 50px;
+  border-radius: 100px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
 }
 .sub-title {
   color: blue;
@@ -38,4 +40,65 @@ h2.big-text#subTitle {
 }
 #lastLine {
   margin: 80px;
+}
+#subTitle:hover {
+  background-color: burlywood;
+}
+h1:hover {
+  color: #9c27b0;
+  cursor: not-allowed;
+}
+
+p{
+  font-size: 36px;
+  font-weight: bolder;
+  font-style: italic;
+  text-align: left;
+}
+a{
+  text-decoration: none;
+  color: rgba(176,122,76,0.5);
+}
+
+.left{
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+.right{
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+/* .float-example p{
+  display: inline-block;
+} */
+
+.button{
+  padding: 10px;
+  background-color: #9c27b0;
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.button2{
+  padding: 10px;
+  background-color: aquamarine;
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.circular{
+  border-radius: 50%;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: aquamarine;
+  color: aliceblue;
+  border: none;
+  box-shadow: 1px 1px 4px #0007;
 }
