@@ -1,0 +1,22 @@
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-item img {
+    height: 400px;
+    width: auto!important;
+    margin: auto;
+}
+
+.group {
+    padding: 10%;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    margin: 2%;
+}
